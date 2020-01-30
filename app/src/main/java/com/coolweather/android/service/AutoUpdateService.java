@@ -57,7 +57,7 @@ public class AutoUpdateService extends Service {
             String weatherId = weather.basic.weatherId;
 
             String weatherUrl = "http://guolin.tech/api/weather?cityid=" +
-                    weatherId + "&key=bc0418b57b2d4918819d3974ac1285d9";
+                    weatherId + "&key=64ed72c6ec6f4b0daf413266fa91bde2";
             HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
                 @Override
                 public void onFailure(@NotNull Call call, @NotNull IOException e)
@@ -98,7 +98,7 @@ public class AutoUpdateService extends Service {
                 String bingPic = response.body().string();
                 SharedPreferences.Editor editor = PreferenceManager.
                         getDefaultSharedPreferences(AutoUpdateService.this).edit();
-                editor.putString("weather",bingPic);
+                editor.putString("bing_pic",bingPic);
                 editor.apply();
             }
         });

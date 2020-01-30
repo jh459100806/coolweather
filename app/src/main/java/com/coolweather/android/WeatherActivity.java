@@ -91,6 +91,7 @@ public class WeatherActivity extends AppCompatActivity {
         swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String weatherString = prefs.getString("weather",null);
+
         if(weatherString!=null)
         {
             Weather weather = Utility.handleWeatherResponse(weatherString);
